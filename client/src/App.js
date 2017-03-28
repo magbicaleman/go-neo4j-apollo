@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Attendees from './scenes/Attendees';
 import AddAttendee from './scenes/Attendees/Add';
+import { Route, Link } from 'react-router-dom'
 
 class App extends Component {
   render() {

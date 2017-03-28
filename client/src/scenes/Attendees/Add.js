@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { gql, graphql } from 'react-apollo';
+import { withRouter } from 'react-router-dom'
 
 class AddAttendee extends Component {
   onSubmit(e) {
@@ -42,4 +43,4 @@ const mutation = gql`
   }
 `;
 
-export default graphql(mutation)(AddAttendee);
+export default graphql(mutation)(withRouter(AddAttendee));
