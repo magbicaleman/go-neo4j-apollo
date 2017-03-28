@@ -6,15 +6,15 @@ class AddAttendee extends Component {
   onSubmit(e) {
     e.preventDefault();
     const self = e.target;
-    const { mutate } = this.props;
+    const { mutate, history } = this.props;
     const { attendeeName: { value } } = self
 
     if (value !== undefined && value !== '') {
       mutate({ variables: { name: value } })
         .then(({ data }) => {
           self.attendeeName.value = '';
-          console.log('data', data) }
-        )
+          history.replace('/')
+        })
         .catch(error => console.log(error))
     }
   }
