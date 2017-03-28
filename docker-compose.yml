@@ -1,0 +1,17 @@
+version: '2'
+services:
+  neo4j:
+    image: neo4j:latest
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./dbs/n4j/data:/data
+  graphql:
+    depends_on:
+      - neo4j
+    build: ./go/graphql-server
+    image: go/graphql
+    container_name: go-graphql
+    ports:
+      - "9000:8080"
