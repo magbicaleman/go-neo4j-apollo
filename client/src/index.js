@@ -11,7 +11,7 @@ const client = new ApolloClient({
   networkInterface: createNetworkInterface({
     uri: 'http://localhost:9000/graphql'
   }),
-  dataIdFromObject: o => o.id,
+  // dataIdFromObject: o => o.id,
 });
 
 // const store = createStore(
