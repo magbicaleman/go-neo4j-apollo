@@ -22,6 +22,7 @@
   background: #282828;
   padding:8px;
   color:white;
+  border-bottom: 1px solid #8FDA52;
 }
 
 .App nav a {
@@ -31,6 +32,7 @@
   background: #303030;
   padding:8px;
   margin: 5px;
+  border-bottom: 1px solid #282828;
 }
 
 @keyframes App-logo-spin {
