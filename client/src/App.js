@@ -12,8 +12,12 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </div>
-        <AddAttendee />
-        <Attendees />
+        <nav>
+          <Link to='/'>Home</Link>
+          <Link to='/add-attendee'>Add Attendee</Link>
+        </nav>
+        <Route exact path="/" component={ Attendees }/>
+        <Route path="/add-attendee" component={AddAttendee}/>
       </div>
     );
   }
