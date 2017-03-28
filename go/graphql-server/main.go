@@ -145,9 +145,27 @@ var rootMutation = graphql.NewObject(graphql.ObjectConfig{
   },
 })
 
+var rootSubscription = graphql.NewObject(graphql.ObjectConfig{
+  Name: "Subscription",
+  Fields: graphql.Fields{
+    "newPeople": &graphql.Field{
+      Type: personType,
+      // Args: graphql.FieldConfigArgument{
+  		// 	"id": &graphql.ArgumentConfig{
+  		// 		Type: graphql.Int,
+  		// 	},
+  		// },
+      Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+  			return nil, nil
+  		},
+    },
+  },
+})
+
 var Schema, _ = graphql.NewSchema(graphql.SchemaConfig{
   Query: queryType,
   Mutation: rootMutation,
+  Subscription: rootSubscription,
 })
 
 func main() {
